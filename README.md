@@ -1,9 +1,12 @@
-# vue-crash-course
+# vue-first-steps
 
 ## Project setup
 ```
 npm install
-```
+if didn't install automatically:
+
+npm install -g @vue\cli
+npm install vue-router
 
 ### Compiles and hot-reloads for development
 ```
