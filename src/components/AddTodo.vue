@@ -1,0 +1,40 @@
+<template>
+  <form @submit.prevent="onSubmit">
+    <input type="text" v-model="title" />
+    <button type="submit">Create</button>
+  </form>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      title: "",
+    };
+  },
+  name: "AddTodo",
+  components: {},
+  methods: {
+    onSubmit() {
+      if (this.title.length !== 0) {
+        const newTodo = {
+          id: Date.now(),
+          title: this.title,
+          completed: false,
+        };
+        this.$emit("add-todo", newTodo);
+        this.title = "";
+      }
+    },
+  },
+};
+</script>
+
+<style>
+form {
+  display: flex;
+}
+input {
+  width: 400px;
+}
+</style>
